@@ -1,3 +1,4 @@
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -163,12 +164,12 @@ a:hover{
 
 /* ================================================= DEFAULTS */
 
-h1{font-size: 32pt; font-weight: normal;}
-h2{font-size: 24pt; font-weight: normal;}
-h3{font-size: 19pt; font-weight: normal;}
-h4{font-size: 16pt; font-weight: normal;}
-h5{font-size: 14pt; font-weight: normal;}
-h6{font-size: 13pt; font-weight: normal;}
+h1{font-size: 48pt; font-weight: normal;}
+h2{font-size: 32pt; font-weight: normal;}
+h3{font-size: 24pt; font-weight: normal;}
+h4{font-size: 19pt; font-weight: normal;}
+h5{font-size: 16pt; font-weight: normal;}
+h6{font-size: 14pt; font-weight: normal;}
 
 /* CLASSES DE APOIO */
 
@@ -210,10 +211,6 @@ main, .content-wrap, .form-group-content{
     margin: 0 .5em 0 0;
 }
 
-.nav-menu ul li a:hover{
-    color: transparent;
-}
-
 .nav-menu-button{
     visibility: collapse;
 }
@@ -234,14 +231,57 @@ main, .content-wrap, .form-group-content{
     width: 100%;
 }
 
-.banner-text{
-    padding: 5% 0;
+.banner-text-style-1{ padding: 5% 0;}
+
+.banner-text-style-1 section{
+    padding: 10% 0;
 }
 
-.banner-text section{
-    padding: 10% 0;
-    vertical-align: middle;
+/* ESTILO DOIS - BANNER */ 
+
+.banner-text-style-2{
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
+
+.banner-text-section{
+    height: 50%;
+    position: relative;
+}
+
+.banner-text-section section p{
+    font-size: 10pt;
+}
+
+.banner-text-section section{
+    position: absolute; 
+    bottom: 0; left: 0; right: 0;
+}
+
+.foo{
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    display: flex;
+    display: -webkit-flex;
+    font-size: 11pt;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-align: center;
+}
+
+.foo div{
+    display: flex;
+    display: -webkit-flex;
+    flex: 1;
+}
+
+.foo div span{
+    padding: .6em;
+    line-height: 1.3em;
+}
+
+/* ESTILO DOIS - BANNER - FIM  */ 
 
 .expand{
     padding: 2em;
@@ -273,6 +313,7 @@ main, .content-wrap, .form-group-content{
     
 }
 
+.col-1{ width: 700px; }
 .col-2{ width: 600px; }
 .col-3{ width: 400px; }
 .col-4{ width: 300px; }
@@ -288,7 +329,6 @@ main, .content-wrap, .form-group-content{
     flex-align: center;
     display: flex;
     display: -webkit-flex;
-    
 }
 
 .banner-style span{
@@ -450,6 +490,69 @@ footer{
     color: #fff;
 }
 
+/**************************************************************** VIDEOS */
+
+.wrap-video{
+    width: 80%;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4em 0; 
+}
+
+.video-container{
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+}
+
+.video-container iframe, .video-container embed, .video-container object{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100% !important;
+    height:100% !important;
+}
+
+/* DASHBOARD - ADD AO CESSIVEL */
+
+.nav-menu-dashboard{
+    padding: 0 1em 0 10em;
+    color: #000000 ;
+    line-height: 61px;
+}
+
+.menuToLeft{
+    float: left;
+}
+
+.menuToRight{
+    float: right;
+}
+
+.nav-menu-dashboard ul li{
+    display: inline-block;
+    margin: 0 .5em 0 0;
+    
+}
+
+.nav-dashboard{
+    height: 85px;
+    position: relative;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(156,156,156,0.77);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(156,156,156,0.77);
+    box-shadow: 0px 4px 8px 0px rgba(156,156,156,0.77);
+}
+
+.divide-no-center{
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+
 /* para os dispositivos com orientação vertical */
 
 @media(max-width: 320px){
@@ -479,6 +582,13 @@ footer{
         display: inline-block;
         text-align: left;
     }
+    /*
+    .banner-style img{
+        height: 196px;
+    } */
+    
+    .banner-text-style-1 section h1{ font-size: 28pt; }
+    .banner-text-style-1 h6{ font-size: 12pt; }
 
     .nav-header{
         display: block;
@@ -486,28 +596,65 @@ footer{
 
     .nav-menu-button{
         float: right;
+        margin: .5em 0;
         padding: 1em;
         visibility: visible;
+        height: 42px; width: 54px;
+    }
+    
+    .nav-menu-icon-white{
+        background: url(../icones/menu.png) no-repeat;
+        background-size: 42px;
+    }
+    
+    .nav-menu-icon-black{
+        background: url(../icones/menu2.png) no-repeat;
+        background-size: 42px;
     }
 
     .nav-menu-collapse{
         display: none;
     }
-
+   
     .nav-menu ul{
-        width: 100%;
+        width: 80%;
         max-width: 740px;
-        position: absolute;
-        left: 0; top: 85px;
-        margin-bottom: 1em;
+        background-color: #393948;
+        color: #fff;
+        opacity: .96;
+        position: fixed;
+        left: 0; bottom: 0;
+        top: 0;
+        z-index: 9999;
     }
 
     .nav-menu ul li{
         display: list-item;
+        padding: .8em;
         margin: 0;
         text-align: center;
         line-height: 30px;
-        border-bottom: 1px solid #cccccc;
+        border-bottom: 1px solid #676792;
+    }
+    
+    .banner-text-style-2 h1{
+        font-size: 22pt;
+    }
+    
+    .banner-text-style-2 h6{
+        font-size: 10pt;
+    }
+    
+    .video-container video, iframe{
+        width: 100%;
+    }
+    
+    .foo{
+        font-size: 8pt;
+    }
+    
+    .foo div img{
+        height: 32px;
     }
     
     .footer-col .col-logo{
@@ -545,6 +692,8 @@ footer{
         position: absolute;
         left: 0; top: 85px;
         margin-bottom: 1em;
+        z-index: 999;
+        
     }
 
     .nav-menu ul li{
@@ -553,6 +702,7 @@ footer{
         text-align: center;
         line-height: 30px;
         border-bottom: 1px solid #cccccc;
+        
     }
     
     .footer-col .col-logo{
